@@ -156,6 +156,7 @@ const designSectionAnimation = (function() {
 const contentAppearing = (function() {
   const bind = function() {
     const skrollrInstance = skrollr.init();
+    document.documentElement.style.overflow = document.body.style.overflow = '';
 
     const $content= $('.js-appearing-content');
     $content.appear();
@@ -268,6 +269,7 @@ const contentAppearing = (function() {
         const loadAttr = function(el, attr, val) {
           if (el.attr(attr) === val) {
             skrollrInstance.refresh();
+            document.documentElement.overflow = document.body.overflow = '';
           }
           else
             setTimeout(loadAttr.bind(null, el, attr, val), 20);
