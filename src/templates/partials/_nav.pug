@@ -1,0 +1,23 @@
+nav.nav
+  .container.nav__container
+    .nav__left_part
+      a.nav__logo_link(href=main_page_link)
+        img.nav__logo_img(src="img/logo_airtap.svg")
+        .nav__logo_title Uplaunch
+      ul.nav__list
+        li.nav__list__item
+          a.nav__list__link(href=demo_link)
+            | examples
+        li.nav__list__item
+          a.nav__list__link(href=features_link)
+            | features
+        li.nav__list__item
+          a.nav__list__link(href=tutorials_link)
+            | tutorials
+        li.nav__list__item
+          a.nav__list__link(href=faq_link)
+            | faq
+    .nav__adaptive_toggle
+
+    a.nav__purchase_button.button.button--bg-black(href=purchase_link, target="_blank")
+      | Purchase

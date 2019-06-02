@@ -1,0 +1,124 @@
+.nav
+  position: fixed
+  z-index: 1000
+  left: 0
+  right: 0
+  margin: auto
+  padding: 40px 0
+  transition: background-color 0.5s ease, padding 0.7s ease, transform 0.2s ease
+@media ($max_laptop)
+  .nav
+    padding: 30px 0
+
+.nav__container
+  display: flex
+  justify-content: space-between
+  align-items: center
+.nav__left_part
+  @include clearfix
+  display: flex
+  align-items: center
+
+.nav__list
+  @include clear_list
+
+.nav__logo_link
+  margin-right: 209px
+  display: flex
+  @include clear_link
+  align-items: center
+@media ($max_laptop)
+  .nav__logo_link
+    margin-right: 120px
+@media ($max_tablets--landscape)
+  .nav__logo_link
+    margin-right: 80px
+
+@media ($max_laptop)
+  .nav__logo_img
+    width: 16px
+
+.nav__logo_title
+  position: relative
+  top: 4px
+  left: 5px
+  text-transform: uppercase
+  font-weight: 700
+  font-size: 12px
+@media ($max_laptop)
+  .nav__logo_title
+    font-size: 9px
+
+.nav__list__item
+  display: inline-block
+  margin-right: 20px
+  position: relative
+  &:after
+    content: ''
+    position: absolute
+    bottom: -3px
+    height: 3px
+    width: 100%
+    left: 0
+    background-color: #f00
+    transform: scaleX(0)
+    transform-origin: left center
+    transition: transform 0.3s ease
+  &:hover:after
+    transform: scaleX(1)
+
+@media ($max_laptop)
+  .nav__list__item
+    margin-right: 15px
+
+.nav__list__link
+  text-transform: uppercase
+  text-decoration: none
+  letter-spacing: 0.84px
+  font-weight: 700
+  font-size: 12px
+  color: inherit
+@media ($max_laptop)
+  .nav__list__link
+    letter-spacing: 0.63px
+    font-size: 9px
+@media ($max_tablets--portrait)
+  .nav__list__link
+    display: none
+
+.nav__adaptive_toggle
+  display: none
+  float: right
+  width: 22px
+  height: 22px
+  cursor: pointer
+  position: relative
+  background-color:black
+  border-radius: 11px
+  border: 1px solid black
+  background-color: #000
+  cursor: pointer
+
+  &:before
+    $nav-offset: 2
+    $nav-height: 1
+    content: ''
+    box-shadow: 0 #{($nav-offset+$nav-height)*1}px white,0 #{($nav-offset+$nav-height)*2}px white
+    position: absolute
+    width: 11px
+    height: #{$nav-height}px
+    left: 50%
+    top: 50%
+    transform: translate(-50%, -#{$nav-height*1.5 + $nav-offset + 0.5}px)
+    background: white
+    border-radius: 11px
+    transition: all .4s linear
+@media ($max_tablets--portrait)
+  .nav__adaptive_toggle
+    display: block
+
+.nav__purchase_button
+  float: right
+@media ($max_tablets--portrait)
+  .nav__purchase_button
+    display: none

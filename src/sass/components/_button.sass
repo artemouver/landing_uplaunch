@@ -1,0 +1,41 @@
+.button
+	display: inline-block
+	min-width: 135px
+	padding: 12px 35px
+	border-radius: 4px
+	border: none
+	font-size: 12px
+	text-decoration: none
+	text-align: center
+	font-weight: 700
+	cursor: pointer
+	&--border-black
+		border: 2px solid
+		border-color: #21242a
+		color: #030303
+	&--bg-blue
+		background-color: $sky
+		color: #fff
+	&--bg-green
+		background-color: #23c947
+		color: #fff
+	&--bg-black
+		background-color: #000
+		color: #fff
+	&--bg-gray
+		background-color: #c5c5c5
+		color: #000
+	&--bg-white
+		background-color: white
+		color: #030303
+		box-shadow: 0 13px 57px rgba(75, 80, 86, 0.38)
+
+@media ($max_laptop)
+	.button
+		min-width: 100px
+		padding: 9px 26px
+		border-radius: 3px
+		font-size: 9px
+@media ($max_tablets--landscape)
+	.button--border-black
+		border: 1px solid

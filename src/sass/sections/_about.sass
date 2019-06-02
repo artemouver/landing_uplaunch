@@ -1,0 +1,244 @@
+.landing
+  .about
+    position: relative
+    background-color: #131313
+    color: #fff
+  .about__container
+    padding-top: 135px
+@media ($max_laptop)
+  .about__container
+    padding-top: 100px
+@media ($max_tablets--landscape)
+  .about__container
+    padding-top: 80px
+@media (max-width: 390px)
+  .about__container
+    padding-top: 50px
+
+.about__subheader
+  font-size: 12px
+  font-weight: 700
+  text-transform: uppercase
+  letter-spacing: 0.6px
+  margin-bottom: 58px
+  display: inline-block
+  position: relative
+  color: $sky
+  transform: translateY(-20px) scale(.95)
+  opacity: 0
+  transition: opacity .7s ease, transform .7s ease-out, color .9s ease
+
+  &.appeared-content
+    color: #fff
+    transform: none
+    opacity: 1
+
+  //&:before{
+  // content: ""
+  // position: absolute
+  // height: 100%
+  // width: 100%
+  // left: 0
+  // background-color: #131313
+  //
+  // transition: transform 0.95s $sliding_easing
+  // transform-origin: left center
+  //}
+  //
+  //&.appeared-content:before{
+  // transform: scaleX(0)
+  //}
+
+@media ($max_laptop)
+  .about__subheader
+    font-size: 9px
+    margin-bottom: 43px
+@media ($max_tablets--landscape)
+  .about__subheader
+    font-size: 8px
+    margin-bottom: 34px
+@media (max-width: 390px)
+  .about__subheader
+    font-size: 7px
+    margin-bottom: 24px
+
+.about__info
+  z-index: 10
+  position: relative
+  left: -4px
+  font-size: 48px
+  font-weight: 300
+  margin-bottom: 78px
+  opacity: 0
+  transform: translateY(-5%) scale(0.985)
+  color: $sky
+  transition: opacity 1s ease, transform 1s ease-out, color 1.2s ease
+  &.appeared-content
+    color: #fff
+    transform: none
+    opacity: 1
+
+@media ($max_laptop)
+  .about__info
+    font-size: 32px
+    margin-bottom: 58px
+@media ($max_tablets--landscape)
+  .about__info
+    font-size: 26px
+    margin-bottom: 46px
+@media (max-width: 390px)
+  .about__info
+    font-size: 22px
+    margin-bottom: 34px
+
+//.about__info__first_string,
+//.about__info__second_string{
+//}
+
+//.about__info__first_string{
+// transform: translateX(-10%)
+//}
+//.about__info__second_string{
+// transform: translateX(10%)
+//}
+//.about__features{
+// list-style: none
+// padding: 0
+// margin: auto
+//}
+
+@media ($max_tablets--portrait)
+  .about__features
+    display: grid
+    grid-template-columns: auto auto
+    max-width: 350px
+    grid-row-gap: 10px
+@media (max-width: 390px)
+  .about__features
+    display: grid
+    grid-template-columns: auto
+    max-width: 350px
+    grid-row-gap: 10px
+
+.about__features__item
+  z-index: 10
+  display: inline-block
+  margin-right: 48px
+  font-size: 18px
+  font-weight: 700
+  position: relative
+  padding-left: 18px
+  &:before
+    position: absolute
+    left: 0
+    top: 50%
+    transform: translateY(-50%)
+    content: ""
+    width: 7px
+    height: 7px
+    border-radius: 50%
+    margin-right: 10px
+    background-color: $mars
+  transition: opacity 1s ease, transform 1s ease
+  transform: translateY(-30%)
+  opacity: 0
+  &:first-child
+    transform: translateY(-30%) translateX(-10%)
+  &:last-child
+    transform: translateY(-30%) translateX(10%)
+
+  .appeared-content &
+    opacity: 1
+    transform: none
+
+  @for $i from 1 through 10
+    &:nth-child(#{$i})
+      transition-delay: #{170 * ($i - 1)}ms
+@media ($max_laptop)
+  .about__features__item
+    font-size: 13px
+    margin-right: 36px
+    padding-left: 13px
+
+    &:before
+      width: 5px
+      height: 5px
+      margin-right: 7px
+@media ($max_tablets--landscape)
+  .about__features__item
+    font-size: 11px
+    margin-right: 28px
+    padding-left: 11px
+
+    &:before
+      width: 4px
+      height: 4px
+      margin-right: 6px
+@media ($max_tablets--portrait) 
+  .about__features__item
+    &:nth-child(1)
+      transform: translateY(-30%) translateX(-10%)
+    &:nth-child(2)
+      transform: translateY(-30%) translateX(10%)
+    &:nth-child(3)
+      transform: translateY(30%) translateX(-10%)
+    &:nth-child(4)
+      transform: translateY(30%) translateX(10%)
+    .appeared-content &
+      opacity: 1
+      transform: none
+@media (max-width: 390px)
+  .about__features__item
+    @for $i from 1 through 10
+      &:nth-child(#{$i})
+        transform: translateX(10%)
+    .appeared-content &
+      opacity: 1
+      transform: none
+
+.about__buttons
+  margin-top: 74px
+  position: relative
+  z-index: 10
+@media (max-width: 390px)
+  .about__buttons
+    margin-top: 40px
+    display: flex
+    flex-direction: column
+.about__button
+  transition: opacity 1.3s ease
+  transition-delay: 0.4s
+  &:first-child
+    transition-delay: 0.1s
+    margin-right: 44px
+  opacity: 0
+  .appeared-content &
+    opacity: 1
+@media (max-width: 390px)
+  .about__button
+    margin: 0
+    max-width: 130px
+    &:first-child
+      transition-delay: 0.1s
+      margin-bottom: 7px
+    opacity: 0
+    .appeared-content &
+      opacity: 1
+
+.about__graph_box
+  margin-top: -12%
+  position: relative
+  overflow-y: hidden
+  //position: absolute
+  //bottom: 0
+  //right: 0
+  //left: 0
+  svg
+    width: 100%
+    height: 100%
+.about__graph
+  width: 100%
+  height: 100%
+  #chart_line
+    stroke-dasharray: 2889
+    transition: stroke-dashoffset 1.5s cubic-bezier(.2,.62,.45,.91)

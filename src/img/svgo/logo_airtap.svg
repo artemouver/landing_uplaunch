@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="18px" viewBox="0 0 22 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 49.3 (51167) - http://www.bohemiancoding.com/sketch -->
+    <title>logo</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop-HD" transform="translate(-375.000000, -50.000000)">
+            <g id="01-block" transform="translate(375.000000, 0.000000)">
+                <g id="logo" transform="translate(0.000000, 50.000000)">
+                    <g>
+                        <circle id="Oval" fill="#173BEF" fill-rule="nonzero" cx="6.281" cy="11.719" r="6.281"></circle>
+                        <polygon id="Polygon_1" fill="#ADBBFF" points="13.951 0 21.685 11.79 6.216 11.79"></polygon>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

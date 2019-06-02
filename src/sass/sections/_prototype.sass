@@ -1,0 +1,417 @@
+.landing
+  .prototype
+    position: relative
+    overflow: hidden
+    background-color: #000
+    color: #fff
+  .prototype__container
+    position: relative
+    padding-top: 300px
+    padding-bottom: 140px
+@media ($max_laptop)
+  .prototype__container
+    padding-top: 225px
+    padding-bottom: 104px
+@media ($max_tablets--landscape)
+  .prototype__container
+    padding-top: 180px
+    padding-bottom: 83px
+
+.prototype__logo_box
+  position: absolute
+  top: -3%
+  left: -10%
+  width: 555px
+  height: 451px
+
+@media ($max_laptop)
+  .prototype__logo_box
+    width: 416px
+    height: 338px
+@media ($max_tablets--landscape)
+  .prototype__logo_box
+    width: 333px
+    height: 270px
+
+//#cp-1
+//  transition: transform 1.5s 0.2s cubic-bezier(0.59, 0.13, 0, 0.91)
+//  transform: scaleY(0)
+//
+//  .appeared-content &
+//    transform: scaleY(1)
+//
+//
+
+//#cp-2
+//  transition: transform 1.5s 0.2s cubic-bezier(0.59, 0.13, 0, 0.91)
+//  transform: scaleY(0)
+//  transition-delay: .2s
+//
+//  .appeared-content &
+//    transform: scaleY(1)
+//
+//
+
+.prototype__logo_circle
+  position: absolute
+  left: 0
+  bottom: 0
+  opacity: 0
+  transition: opacity 0.5s ease,transform 1.5s 0.2s cubic-bezier(0.59, 0.13, 0, 0.91)
+  transform: scaleY(0)
+  transform-origin: center top
+  .appeared-content &
+    opacity: 1
+    transform: none
+@media ($max_laptop)
+  .prototype__logo_circle
+    width: 253px
+@media ($max_tablets--landscape)
+  .prototype__logo_circle
+    width: 202px
+.prototype__logo_triangle
+  position: absolute
+  right: 0
+  top: 0
+  z-index: 10
+  opacity: 0
+  transition: opacity 0.5s ease,transform 1.5s 0.2s cubic-bezier(0.59, 0.13, 0, 0.91)
+  transform: scaleY(0)
+  transform-origin: center top
+  transition-delay: .2s
+  .appeared-content &
+    opacity: 1
+    transform: none
+@media ($max_laptop)
+  .prototype__logo_triangle
+    width: 304px
+@media ($max_tablets--landscape)
+  .prototype__logo_triangle
+    width: 243px
+.prototype__title
+  margin-bottom: 55px
+@media ($max_laptop)
+  .prototype__title
+    margin-bottom: 41px
+@media ($max_tablets--landscape)
+  .prototype__title
+    margin-bottom: 33px
+.prototype__info
+  margin-bottom: 80px
+  font-size: 24px
+  font-weight: 300
+  line-height: 1.4
+  opacity: 0
+  transform: translateY(-5%) scale(0.985)
+  color: $sky
+  transition: opacity 1s ease, transform 1s ease-out, color 1.2s ease
+  &.appeared-content
+    color: #fff
+    transform: none
+    opacity: 1
+@media ($max_laptop)
+  .prototype__info
+    font-size: 18px
+    margin-bottom: 60px
+@media ($max_tablets--landscape)
+  .prototype__info
+    font-size: 14px
+    margin-bottom: 48px
+.prototype__title__word
+  display: inline-block
+  opacity: 0
+  transform: translateY(-15px) scale(0.985)
+  transition: opacity 1s ease, transform 1s ease
+  @for $i from 1 through 5
+    @if $i > 3
+      &:nth-child(#{$i})
+        transition-delay: #{170 * ($i - 2)}ms
+    @else
+      &:nth-child(#{$i})
+        transition-delay: #{170 * ($i - 1)}ms
+  .appeared-content &
+    opacity: 1
+    transform: none
+
+.prototype__features__line
+  @include clearfix
+  margin-bottom: 40px
+  &:last-child
+    margin-bottom: 0
+@media ($max_laptop)
+  .prototype__features__line
+    margin-bottom: 30px
+    &:last-child
+      margin-bottom: 0
+@media ($max_tablets--landscape)
+  .prototype__features__line
+    margin-bottom: 24px
+    &:last-child
+      margin-bottom: 0
+@media ($max_phones--small)
+  .prototype__features__line
+    display: flex
+    justify-content: center
+.prototype__feature_item
+  float: left
+  width: 50%
+  padding-right: 70px
+@media ($max_laptop)
+  .prototype__feature_item
+    padding-right: 52px
+@media ($max_tablets--landscape)
+  .prototype__feature_item
+    padding-right: 42px
+@media ($max_phones--small)
+  .prototype__feature_item
+    padding: 0 40px
+    width: 35%
+    min-width: 200px
+    opacity: 0
+.prototype__feature_title
+  font-size: 14px
+  font-weight: 700
+  letter-spacing: 0.6px
+  //text-transform: uppercase
+  margin-bottom: 22px
+  color: $sky
+  transform: translateY(-20px) scale(.95)
+  opacity: 0
+  transition: opacity .95s cubic-bezier(.25,.1,.2,1), transform .95s cubic-bezier(.25,.1,.2,1), color .95s ease
+  .appeared-content &
+    color: #fff
+    transform: none
+    opacity: 1
+@media ($max_laptop)
+  .prototype__feature_title
+    font-size: 9px
+    margin-bottom: 16px
+@media ($max_tablets--landscape)
+  .prototype__feature_title
+    font-size: 7px
+    margin-bottom: 13px
+.prototype__feature_text
+  font-size: 16px
+  font-weight: 300
+  line-height: 1.4
+  color: $sky
+  transform: translateY(20px) scale(.95)
+  opacity: 0
+  transition: opacity .95s cubic-bezier(.25,.1,.2,1), transform .95s cubic-bezier(.25,.1,.2,1), color 1.1s ease
+  transition-delay: .1s
+  .appeared-content &
+    color: #fff
+    transform: none
+    opacity: 1
+@media ($max_laptop)
+  .prototype__feature_text
+    font-size: 12px
+@media ($max_tablets--landscape)
+  .prototype__feature_text
+    font-size: 10px
+.prototype__features
+  display: flex
+  flex-direction: column
+@media ($max_phones--small)
+  .prototype__features
+    flex-direction: column-reverse
+.prototype__dots
+  @include clearfix
+  display: none
+  flex-direction: row
+  justify-content: center
+  margin-top: 45px
+  padding: 20px 0
+@media ($max_phones--small)
+  .prototype__dots
+    display: flex
+    margin-top: 27px
+    padding: 12px 0
+.prototype__features__box
+  display: flex
+  flex-direction: column
+.prototype__dot_input
+  position: absolute
+  opacity: 0
+@media ($max_phones--small)
+  #prototype__dot_first:checked ~ .prototype__dots label[for='prototype__dot_first'] .prototype__dot
+    &:after
+      content: ""
+      background-color: #fff
+  #prototype__dot_second:checked ~ .prototype__dots label[for='prototype__dot_second'] .prototype__dot
+    &:after
+      content: ""
+      background-color: #fff
+  #prototype__dot_first:checked ~ .prototype__features__box
+    & .prototype__feature_item
+      &:nth-child(1)
+        transition: opacity 1.5s ease
+        opacity: 1
+      &:nth-child(2)
+        position: absolute
+  #prototype__dot_second:checked ~ .prototype__features__box
+    & .prototype__feature_item
+      &:nth-child(1)
+        position: absolute
+      &:nth-child(2)
+        transition: opacity 1.5s ease
+        opacity: 1
+.prototype__dot
+  position: relative
+  float: left
+  width: 40px
+  height: 2px
+  padding: 7px 0
+  margin-right: 20px
+  cursor: pointer
+  &:after
+    content: ""
+    position: absolute
+    left: 0
+    height: 2px
+    transform: translateY(-50%)
+    width: 100%
+  &:after
+    content: ""
+    z-index: 1
+    background-color: rgba(#45464f, 0.40)
+    transition: background-color .5s ease
+@media ($max_laptop)
+  .prototype__dot
+    width: 30px
+    height: 2px
+    margin-right: 15px
+@media ($max_tablets--landscape)
+  .prototype__dot
+    width: 24px
+    height: 2px
+    margin-right: 12px
+@media ($max_tablets--portrait)
+  .prototype__dot
+    width: 24px
+    height: 2px
+    margin-right: 12px
+
+.prototype__main_info
+.prototype__main_info, .prototype__advanced_box
+  position: relative
+  z-index: 100
+  width: 50%
+@media ($max_tablets--portrait)
+  .prototype__main_info, .prototype__advanced_box
+    width: 100%
+.prototype__advanced_box
+  @include clearfix
+  margin-top: 95px
+  padding-top: 35px
+  border-top: 1px solid rgba(#fff, 0.3)
+@media ($max_laptop)
+  .prototype__advanced_box
+    margin-top: 71px
+    padding-top: 26px
+@media ($max_tablets--landscape)
+  .prototype__advanced_box
+    margin-top: 57px
+    padding-top: 21px
+.prototype__advanced_title
+  font-weight: 700
+  font-size: 18px
+  margin-bottom: 30px
+  color: $sky
+  transform: translateY(-20px) scale(.95)
+  opacity: 0
+  transition: opacity .7s ease, transform .7s ease-out, color .9s ease
+  .appeared-content &
+    color: #fff
+    transform: none
+    opacity: 1
+@media ($max_laptop)
+  .prototype__advanced_title
+    font-size: 13px
+    margin-bottom: 22px
+@media ($max_tablets--landscape)
+  .prototype__advanced_title
+    font-size: 10px
+    margin-bottom: 18px
+.prototype__advanced_text_box
+  @include clearfix
+  display: flex
+  align-items: center
+.prototype__advanced_text
+  float: left
+  width: 70%
+  padding-right: 15px
+  font-weight: 300
+  line-height: 1.4
+  color: $sky
+  transform: translateY(-20px) scale(.95)
+  opacity: 0
+  transition: opacity .7s ease, transform .7s ease-out, color .9s ease
+  transition-delay: .4s
+  .appeared-content &
+    color: #fff
+    transform: none
+    opacity: 1
+@media ($max_laptop)
+  .prototype__advanced_text
+    font-size: 12px
+@media ($max_tablets--landscape)
+  .prototype__advanced_text
+    font-size: 10px
+.prototype__advanced_images
+  margin-left: 20px
+  position: relative
+.prototype__advanced_img
+  transition: opacity 1s ease, transform 3.5s cubic-bezier(0,0,.23,.95)
+  opacity: 0
+  &:nth-child(1)
+    position: absolute
+    top: 14px
+    left: 47%
+  &:nth-child(2)
+    position: relative
+  .appeared-content &
+    opacity: 1
+@media ($max_laptop)
+  .prototype__advanced_img:nth-child(1)
+    width: 37px
+  .prototype__advanced_img:nth-child(2)
+    width: 40px
+@media ($max_tablets--landscape)
+  .prototype__advanced_img:nth-child(1)
+    width: 30px
+  .prototype__advanced_img:nth-child(2)
+    width: 32px
+.prototype__circle
+  position: absolute
+  z-index: 5
+  bottom: -60%
+  left: -40%
+  width: 70%
+  height: 110%
+  border-radius: 60%
+  background-color: $sky
+.prototype__mockup_box
+  position: absolute
+  right: 0
+  top: 40%
+@media ($max_tablets--portrait)
+  .prototype__mockup_box
+    visibility: hidden
+.prototype__mockup
+  position: absolute
+  top: 0
+  right: 0
+  opacity: 0
+  transition: transform 3.5s cubic-bezier(0,0,.23,.95),opacity 1s ease
+  .appeared-content &
+    opacity: 1
+@media ($max_laptop)
+  .prototype__mockup
+    width: 836px
+@media ($max_tablets--landscape)
+  .prototype__mockup
+    width: 669px
+@media ($max_tablets--portrait)
+  .prototype__mockup
+    width: 520px

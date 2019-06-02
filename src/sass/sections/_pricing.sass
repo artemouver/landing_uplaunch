@@ -1,0 +1,301 @@
+.pricing
+  background-color: #1c1c1d
+  color: #ffffff
+  padding-top: 150px
+  padding-bottom: 218px
+@media ($max_laptop)
+  .pricing
+    padding-top: 112px
+    padding-bottom: 163px
+@media ($max_tablets--landscape)
+  .pricing
+    padding-top: 90px
+    padding-bottom: 130px
+.pricing__feedbacks
+  margin-bottom: 80px
+@media ($max_laptop)
+  .pricing__feedbacks
+    margin-bottom: 60px
+@media ($max_tablets--landscape)
+  .pricing__feedbacks
+    margin-bottom: 48px
+.pricing__feedbacks_box
+  position: relative
+  height: 310px
+@media ($max_laptop)
+  .pricing__feedbacks_box
+    height: 232px
+@media ($max_tablets--landscape)
+  .pricing__feedbacks_box
+    height: 186px
+.pricing__feedback
+  position: absolute
+  opacity: 0
+  transform: scale(1.05)
+  transform-origin: center
+  &.state-active
+    opacity: 1
+    transform: none
+    transition: opacity 1.5s ease, transform 2s cubic-bezier(0.4, 0.07, 0.08, 0.94) //0.8s
+.pricing__feedback_text
+  margin-bottom: 45px
+  font-size: 36px
+  font-weight: 300
+  line-height: 1.4
+  &:after, &:before
+    content: ""
+    position: absolute
+    background-repeat: no-repeat
+    background-size: contain
+    background-position: center
+  &:before
+    left: 0
+    top: 0
+    width: 31px
+    height: 24px
+    background-image: url(/img/icons/quotation_marks_top.svg)
+    transform: translateY(-120%) translateX(-120%)
+  &:after
+    width: 29px
+    height: 26px
+    right: 0
+    background-image: url(/img/icons/quotation_marks_bottom.svg)
+    transform: translateY(100%) translateX(100%)
+@media ($max_laptop)
+  .pricing__feedback_text
+    margin-bottom: 34px
+    font-size: 27px
+    &:before
+      width: 23px
+      height: 18px
+    &:after
+      width: 22px
+      height: 20px
+@media ($max_tablets--landscape)
+  .pricing__feedback_text
+    margin-bottom: 27px
+    font-size: 22px
+    &:before
+      width: 18px
+      height: 14px
+    &:after
+      width: 18px
+      height: 16px
+@media (max-width: 470px)
+  .pricing__feedback_text
+    margin-bottom: 27px
+    font-size: 20px
+    &:before
+      width: 18px
+      height: 14px
+    &:after
+      width: 18px
+      height: 16px
+
+.pricing__feedback_person
+	@include clearfix
+@media (max-width: 460px)
+  .pricing__feedback_person
+    display: flex
+    flex-direction: column
+
+.pricing__feedback_person_img
+  float: left
+  margin-right: 30px
+  width: 60px
+  height: 60px
+  border-radius: 50%
+@media ($max_laptop)
+  .pricing__feedback_person_img
+    margin-right: 22px
+    width: 45px
+    height: 45px
+@media ($max_tablets--landscape)
+  .pricing__feedback_person_img
+    margin-right: 18px
+    width: 36px
+    height: 36px
+.pricing__feedback_person_info
+  float: left
+@media (max-width: 460px)
+  .pricing__feedback_person_info
+    margin-top: 10px
+
+.pricing__feedback_person_name
+  margin-bottom: 14px
+  color: #fefefe
+  font-size: 24px
+  font-weight: 700
+@media ($max_laptop)
+  .pricing__feedback_person_name
+    margin-bottom: 10px
+    font-size: 18px
+@media ($max_tablets--landscape)
+  .pricing__feedback_person_name
+    margin-bottom: 8px
+    font-size: 14px
+.pricing__feedback_person_title
+  color: #fefefe
+  font-size: 16px
+  font-weight: 400
+@media ($max_laptop)
+  .pricing__feedback_person_name
+    font-size: 12px
+@media ($max_tablets--landscape)
+  .pricing__feedback_person_name
+    font-size: 10px
+.pricing__dots
+  @include clearfix
+  margin-top: 45px
+  padding: 20px 0
+@media ($max_laptop)
+  .pricing__dots
+    margin-top: 34px
+    padding: 15px 0
+@media ($max_tablets--landscape)
+  .pricing__dots
+    margin-top: 27px
+    padding: 12px 0
+@media ($max_tablets--portrait)
+  .pricing__dots
+    margin-top: 80px
+    padding: 12px 0
+@media (max-width: 460px)
+  .pricing__dots
+    margin-top: 130px
+    padding: 12px 0
+@media (max-width: 400px)
+  .pricing__dots
+    margin-top: 180px
+    padding: 12px 0
+@media (max-width: 350px)
+  .pricing__dots
+    margin-top: 220px
+    padding: 12px 0
+.pricing__dot
+  position: relative
+  float: left
+  width: 40px
+  height: 10px
+  margin-right: 20px
+  cursor: pointer
+  &:after, &:before
+    content: ""
+    position: absolute
+    left: 0
+    top: 4px
+    height: 2px
+    bottom: 0
+    width: 100%
+  &:after
+    content: ""
+    z-index: 1
+    background-color: rgba(#45464f, 0.40)
+  &:before
+    z-index: 10
+    background-color: #fff
+    transform-origin: left center
+    transform: scale(0)
+    opacity: 0
+    transition: opacity 0.3s ease, transform 0.0s 0s linear
+  &.state-loading-dot
+    &:after
+      background-color: rgba(#45464f, 0.9)
+    &:before
+      transform: scale(1)
+      opacity: 1
+      transition: transform 5s linear
+  &.state-active-dot
+    &:after
+      content: ""
+      background-color: white
+      transition: background-color 0.25s ease
+    &:before
+      content: ""
+      transform: none
+@media ($max_laptop)
+  .pricing__dot
+    width: 30px
+    height: 7px
+    margin-right: 15px
+@media ($max_tablets--landscape)
+  .pricing__dot
+    width: 24px
+    height: 6px
+    margin-right: 12px
+.pricing__price_box
+  margin-bottom: 70px
+  text-align: center
+@media ($max_laptop)
+  .pricing__price_box
+    margin-bottom: 52px
+@media ($max_tablets--landscape)
+  .pricing__price_box
+    margin-bottom: 42px
+.pricing__price
+  margin-bottom: 50px
+  color: #fefefe
+  font-size: 120px
+  font-weight: 300
+@media ($max_laptop)
+  .pricing__price
+    margin-bottom: 37px
+    font-size: 90px
+@media ($max_tablets--landscape)
+  .pricing__price
+    margin-bottom: 30px
+    font-size: 72px
+.pricing__info
+  margin-bottom: 63px
+  opacity: 0.4
+  font-size: 20px
+  font-weight: 300
+@media ($max_laptop)
+  .pricing__info
+    margin-bottom: 47px
+    font-size: 15px
+@media ($max_tablets--landscape)
+  .pricing__info
+    margin-bottom: 38px
+    font-size: 12px
+.pricing__features
+  @include clear_list
+  margin-top: 165px
+@media ($max_laptop)
+  .pricing__features
+    margin-top: 124px
+@media ($max_tablets--landscape)
+  .pricing__features
+    margin-top: 99px
+.pricing__feature_item
+  float: left
+  width: 25%
+  padding-right: 60px
+@media ($max_laptop)
+  .pricing__feature_item
+    padding-right: 45px
+@media ($max_tablets--landscape)
+  .pricing__feature_item
+    padding-right: 36px
+.pricing__feature_item_title
+  margin-bottom: 14px
+  font-size: 16px
+  font-weight: 500
+@media ($max_laptop)
+  .pricing__feature_item_title
+    margin-bottom: 10px
+    font-size: 12px
+@media ($max_tablets--landscape)
+  .pricing__feature_item_title
+    margin-bottom: 8px
+    font-size: 10px
+.pricing__feature_item_text
+  font-size: 16px
+  font-weight: 300
+  line-height: 1.4
+@media ($max_laptop)
+  .pricing__feature_item_text
+    font-size: 12px
+@media ($max_tablets--landscape)
+  .pricing__feature_item_text
+    font-size: 10px

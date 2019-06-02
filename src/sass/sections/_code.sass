@@ -1,0 +1,556 @@
+.landing
+  .code
+    position: relative
+    overflow: hidden
+    background-color: #1c1c1d
+    color: #fff
+  .code__container
+    padding-top: 108px
+    padding-bottom: 130px
+@media ($max_laptop)
+  .code__container
+    padding-top: 81px
+    padding-bottom: 97px
+@media ($max_tablets--landscape)
+  .code__container
+    padding-top: 65px
+    padding-bottom: 78px
+@media ($max_phones--small)
+  .code__container
+    padding-bottom: 40px
+
+.code__title
+  margin-bottom: 55px
+@media ($max_laptop)
+  .code__title
+    margin-bottom: 41px
+@media ($max_tablets--landscape)
+  .code__title
+    margin-bottom: 33px
+
+.code__title__word
+  display: inline-block
+  opacity: 0
+  transform: translateY(-15px) scale(0.985)
+  transition: opacity 1s ease, transform 1s ease
+
+  @for $i from 1 through 2
+    &:nth-child(#{$i})
+      transition-delay: #{170 * ($i - 1)}ms
+  .appeared-content &
+    opacity: 1
+    transform: none
+
+.code__info
+  position: relative
+  margin-bottom: 80px
+  font-size: 24px
+  font-weight: 300
+  line-height: 1.4
+  opacity: 0
+  transform: translateY(-5%) scale(0.985)
+  color: $sky
+  transition: opacity 1s ease, transform 1s ease-out, color 1.2s ease
+  &.appeared-content
+    color: #fff
+    transform: none
+    opacity: 1
+
+@media ($max_laptop)
+  .code__info
+    font-size: 18px
+    margin-bottom: 60px
+@media ($max_tablets--landscape)
+  .code__info
+    font-size: 15px
+    margin-bottom: 48px
+@media ($max_tablets--portrait)
+  .code__features__box
+    margin-bottom: 39vw
+@media ($max_phones)
+  .code__features__box
+    margin-bottom: 45vw
+@media ($max_phones--small)
+  .code__features__box
+    margin-bottom: 0
+
+.code__features__line
+  @include clearfix
+  margin-bottom: 40px
+  &:last-child
+    margin-bottom: 0
+@media ($max_laptop)
+  .code__features__line
+    margin-bottom: 30px
+    &:last-child
+      margin-bottom: 0
+@media ($max_tablets--landscape)
+  .code__features__line
+    margin-bottom: 24px
+    &:last-child
+      margin-bottom: 0
+@media ($max_phones--small)
+  .code__features__line
+    display: flex
+    justify-content: center
+
+.code__feature_item
+  float: left
+  width: 50%
+  padding-right: 70px
+@media ($max_laptop)
+  .code__feature_item
+    padding-right: 52px
+@media ($max_tablets--landscape)
+  .code__feature_item
+    padding-right: 42px
+@media ($max_phones--small)
+  .code__feature_item
+    padding: 0 40px
+    width: 35%
+    min-width: 200px
+    opacity: 0
+
+.code__feature_title
+  font-size: 12px
+  font-weight: 700
+  letter-spacing: 0.6px
+  text-transform: uppercase
+  margin-bottom: 22px
+  color: $sky
+  transform: translateY(-20px) scale(.95)
+  opacity: 0
+  transition: opacity .95s cubic-bezier(.25,.1,.2,1), transform .95s cubic-bezier(.25,.1,.2,1), color .95s ease
+  .appeared-content &
+    color: #fff
+    transform: none
+    opacity: 1
+
+@media ($max_laptop)
+  .code__feature_title
+    font-size: 9px
+    margin-bottom: 16px
+@media ($max_tablets--landscape)
+  .code__feature_title
+    font-size: 8px
+    margin-bottom: 13px
+
+.code__feature_text
+  font-size: 16px
+  font-weight: 300
+  line-height: 1.4
+  color: $sky
+  transform: translateY(20px) scale(.95)
+  opacity: 0
+  transition: opacity .95s cubic-bezier(.25,.1,.2,1), transform .95s cubic-bezier(.25,.1,.2,1), color 1.1s ease
+  transition-delay: .1s
+  .appeared-content &
+    color: #fff
+    transform: none
+    opacity: 1
+@media ($max_laptop)
+  .code__feature_text
+    font-size: 12px
+@media ($max_tablets--landscape)
+  .code__feature_text
+    font-size: 10px
+
+.code__features
+  display: flex
+  flex-direction: column
+@media ($max_phones--small)
+  .code__features
+    flex-direction: column-reverse
+
+.code__dots
+  @include clearfix
+  display: none
+  flex-direction: row
+  justify-content: center
+  margin-top: 45px
+  padding: 20px 0
+@media ($max_phones--small)
+  .code__dots
+    display: flex
+    margin-top: 27px
+    padding: 12px 0
+    margin-bottom: 25vh
+@media (max-width: 340px)
+  .code__dots
+    display: flex
+    margin-top: 27px
+    padding: 12px 0
+    margin-bottom: 17vh
+
+.code__features__box
+  display: flex
+  flex-direction: column
+
+.code__dot_input 
+  position: absolute
+  opacity: 0
+
+@media ($max_phones--small)
+  #code__dot_first:checked ~ .code__dots label[for='code__dot_first'] .code__dot
+    &:after
+      content: ""
+      background-color: #fff
+
+  #code__dot_second:checked ~ .code__dots label[for='code__dot_second'] .code__dot
+    &:after
+      content: ""
+      background-color: #fff
+
+  #code__dot_first:checked ~ .code__features__box
+    & .code__feature_item
+      &:nth-child(1)
+        transition: opacity 1.5s ease
+        opacity: 1
+      &:nth-child(2)
+        position: absolute
+
+  #code__dot_second:checked ~ .code__features__box
+    & .code__feature_item
+      &:nth-child(1)
+        position: absolute
+      &:nth-child(2)
+        transition: opacity 1.5s ease
+        opacity: 1
+
+.code__dot
+  position: relative
+  float: left
+  width: 40px
+  height: 2px
+  padding: 7px 0
+  margin-right: 20px
+  cursor: pointer
+  &:after
+    content: ""
+    position: absolute
+    left: 0
+    height: 2px
+    transform: translateY(-50%)
+    width: 100%
+  &:after
+    content: ""
+    z-index: 1
+    background-color: rgba(#45464f, 0.40)
+    transition: background-color .5s ease
+@media ($max_laptop)
+  .code__dot
+    width: 30px
+    height: 2px
+    margin-right: 15px
+@media ($max_tablets--landscape)
+  .code__dot
+    width: 24px
+    height: 2px
+    margin-right: 12px
+@media ($max_tablets--portrait)
+  .code__dot
+    width: 24px
+    height: 2px
+    margin-right: 12px
+
+.code__main_info, .code__advanced_box
+  position: relative
+  z-index: 100
+  width: 50%
+@media ($max_tablets--portrait)
+  .code__main_info, .code__advanced_box
+    width: 100%
+.code__advanced_box
+  @include clearfix
+  margin-top: 95px
+  padding-top: 35px
+  border-top: 1px solid rgba(#fff, 0.3)
+@media ($max_laptop)
+  .code__advanced_box
+    margin-top: 71px
+    padding-top: 26px
+@media ($max_tablets--landscape)
+  .code__advanced_box
+    margin-top: 57px
+    padding-top: 21px
+
+.code__advanced_title
+  font-weight: 700
+  font-size: 18px
+  margin-bottom: 30px
+  display: inline-block
+  position: relative
+  color: $sky
+  transform: translateY(-20px) scale(.95)
+  opacity: 0
+  transition: opacity .7s ease, transform .7s ease-out, color .9s ease
+  .appeared-content &
+    color: #fff
+    transform: none
+    opacity: 1
+@media ($max_laptop)
+  .code__advanced_title
+    font-size: 13px
+    margin-bottom: 22px
+@media ($max_tablets--landscape)
+  .code__advanced_title
+    font-size: 10px
+    margin-bottom: 18px
+@media ($max_phones--small)
+  .code__advanced_title
+    display: flex
+    width: 70vw
+    margin: 0 auto 18px
+
+.code__advanced_text_box
+  @include clearfix
+  display: flex
+  align-items: center
+@media ($max_phones--small)
+  .code__advanced_text_box
+    flex-direction: column
+
+.code__advanced_text
+  float: left
+  width: 50%
+  padding-right: 15px
+  font-weight: 300
+  line-height: 1.4
+
+@media ($max_laptop)
+  .code__advanced_text
+    font-size: 12px
+    padding-right: 11px
+@media ($max_tablets--landscape)
+  .code__advanced_text
+    font-size: 10px
+    padding-right: 9px
+@media ($max_phones--small)
+  .code__advanced_text
+    width: 70vw
+
+.code__advanced_img
+  float: left
+  padding-right: 40px
+  &:last-child
+    padding-right: 5px
+
+@media ($max_laptop)
+  .code__advanced_img
+    padding-right: 30px
+    &:last-child
+      padding-right: 5px
+
+  .code__advanced_img:nth-child(2)
+    width: 58px
+  .code__advanced_img:nth-child(3)
+    width: 70px
+  .code__advanced_img:nth-child(4)
+    width: 70px
+  .code__advanced_img:nth-child(5)
+    width: 26px
+
+@media ($max_tablets--landscape)
+  .code__advanced_img
+    padding-right: 24px
+    &:last-child
+      padding-right: 4px
+
+  .code__advanced_img:nth-child(2)
+    width: 48px
+  .code__advanced_img:nth-child(3)
+    width: 58px
+  .code__advanced_img:nth-child(4)
+    width: 58px
+  .code__advanced_img:nth-child(5)
+    width: 21px
+@media ($max_phones--small)
+  .code__advanced_img
+    padding: 15px 0
+    &:nth-child(2)
+      padding-top: 30px
+    &:last-child
+      padding: 0
+
+  .code__advanced_img:nth-child(2)
+    width: 48px
+  .code__advanced_img:nth-child(3)
+    width: 58px
+  .code__advanced_img:nth-child(4)
+    width: 58px
+  .code__advanced_img:nth-child(5)
+    width: 21px
+
+.code__advanced_item
+  color: $sky
+  transform: translateY(-20px) scale(.95)
+  opacity: 0
+  transition: opacity .7s ease, transform .7s ease-out, color .9s ease
+  @for $i from 1 through 8
+    &:nth-child(#{$i})
+      transition-delay: #{400 + 200 * ($i - 1)}ms
+
+  .appeared-content &
+    color: #fff
+    transform: none
+    opacity: 1
+
+
+.code__circle
+  position: absolute
+  z-index: 5
+  left: 0
+  background-position: left bottom
+  background-size: contain
+  background-repeat: no-repeat
+  background-image: url(/img/rect_code.svg)
+  bottom: -32%
+  height: 100%
+  right: 60%
+  transform: scaleY(0.6)
+  opacity: 0
+  transform-origin: bottom center
+  transition: opacity .5s ease, transform 1.5s 0.2s cubic-bezier(0.59, 0.13, 0, 0.91)
+  transition-delay: .3s
+
+  &.appeared-content
+    transform: scaleY(1)
+    opacity: 1
+@media ($max_tablets--portrait)
+  .code__circle
+    display: none
+
+
+.code__cards_box
+  position: absolute
+  right: 0
+  top: 30%
+@media (max-width: 1470px)
+  .code__cards_box
+    transform: translateX(50px)
+@media (max-width: 1230px)
+  .code__cards_box
+    transform: translateX(100px)
+@media (max-width: 1160px)
+  .code__cards_box
+    transform: translateX(150px)
+@media ($max_tablets--portrait)
+  .code__cards_box
+    left: 0
+    transform: translateX(-20%)
+    top: 50%
+@media (max-width: 650px)
+  .code__cards_box
+    top: 53%
+@media (max-width: 570px)
+  .code__cards_box
+    transform: translateX(-14%)
+    top: 53%
+@media (max-width: 520px)
+  .code__cards_box
+    top: 55%
+@media (max-width: 450px)
+  .code__cards_box
+    top: 58%
+@media ($max_phones--small)
+  .code__cards_box
+    top: 51%
+@media (max-width: 340px)
+  .code__cards_box
+    top: 52%
+
+.code__card
+  position: absolute
+  top: 0
+  right: 0
+  transition: transform 3.5s cubic-bezier(0,0,.23,.95),opacity 1s ease
+  &--top
+    top: -150px
+    right: -10em
+    z-index: 100
+    opacity: 0
+    transition-delay: .25s
+		.appeared-content &
+      opacity: 1
+  &--bottom
+    opacity: 0
+    .appeared-content &
+      opacity: 1
+
+@media ($max_desktop)
+  .code__card
+    width: 950px
+    &--top
+      top: -115px
+      right: -7.5em
+      z-index: 100
+      opacity: 0
+      transition-delay: .25s
+      .appeared-content &
+        opacity: 1
+@media ($max_laptop)
+  .code__card
+    width: 810px
+    &--top
+      top: -115px
+      right: -7.5em
+      z-index: 100
+      opacity: 0
+      transition-delay: .25s
+      .appeared-content &
+        opacity: 1
+@media ($max_tablets--landscape)
+  .code__card
+    width: 610px
+    &--top
+      top: -85px
+      right: -5em
+      z-index: 100
+      opacity: 0
+      transition-delay: .25s
+      .appeared-content &
+        opacity: 1
+@media ($max_tablets--portrait)
+  .code__card
+    width: 70vw
+    &--top
+      top: -60px
+      right: -4em
+      z-index: 100
+      opacity: 0
+      transition-delay: .25s
+      .appeared-content &
+        opacity: 1
+@media (max-width: 740px)
+  .code__card
+    width: 65vw
+    &--top
+      top: -40px
+      right: -2.5em
+      z-index: 100
+      opacity: 0
+      transition-delay: .25s
+      .appeared-content &
+        opacity: 1
+@media (max-width: 570px)
+  .code__card
+    width: 80vw
+    &--top
+      top: -40px
+      right: -2.5em
+      z-index: 100
+      opacity: 0
+      transition-delay: .25s
+      .appeared-content &
+        opacity: 1
+@media (max-width: 410px)
+  .code__card
+    width: 80vw
+    &--top
+      top: -30px
+      right: -2em
+      z-index: 100
+      opacity: 0
+      transition-delay: .25s
+      .appeared-content &
+        opacity: 1

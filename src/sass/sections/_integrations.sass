@@ -1,0 +1,60 @@
+.landing
+  .integrations
+    background-color: #f8fafb
+
+  .integrations__container
+    @include clearfix
+    padding-top: 220px
+    padding-bottom: 229px
+    position: relative
+  .integrations__info_box
+    float: right
+    width: 50%
+  .integrations__image_box
+    float: left
+    width: 50%
+  .integrations__image
+    float: right
+    width: 170%
+    margin-top: -100px
+    margin-right: -60px
+  .integrations__title
+    margin-bottom: 40px
+  .integrations__text
+    margin-bottom: 95px
+    max-width: 400px
+    font-weight: 300
+    font-size: 22px
+    line-height: 1.4
+  .integrations__features_box
+    @include clear_list
+    @include clearfix
+  .integrations__feature_item
+    float: left
+    width: 50%
+    padding-right: 40px
+  .integrations__feature_title
+    margin-bottom: 20px
+    font-size: 12px
+    font-weight: 700
+    text-transform: uppercase
+    letter-spacing: 0.6px
+  .integrations__feature_text
+    font-size: 16px
+    font-weight: 300
+    line-height: 1.4
+  .integrations__button_box
+    margin-top: 60px
+  .integrations__button
+    display: inline-block
+    padding: 10px 20px
+    text-decoration: none
+    color: #fff
+    background-color: $sky
+    cursor: pointer
+    border-radius: 4px
+    &:hover
+      background-color: #7d50ef
+@media (max-width: 550px)
+  .integrations
+    display: none

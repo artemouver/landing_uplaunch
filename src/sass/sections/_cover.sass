@@ -1,0 +1,530 @@
+.cover
+  position: relative
+  height: 100vh
+  background-color: white
+@media ($max_tablets--portrait) and (max-height: 794px)
+  .cover
+    height: 1010px
+@media ($max_tablets--portrait) and (max-height: 690px) and ($landscape)
+  .cover
+    height: calc(100vh + 610px)
+@media (max-width: 420px)
+  .cover
+    height: 705px
+
+.cover__content
+  position: absolute
+  left: 0
+  right: 0
+  margin: auto
+  top: calc(50% + 40px)
+  transform: translateY(-50%)
+@media ($max_tablets--portrait)
+  .cover__content
+    position: relative
+    height: 400px
+    transform: translateY(35%)
+    top: 0
+@media ($max_tablets--portrait) and (max-height: 690px) and ($landscape)
+  .cover__content
+    position: relative
+    height: 100vh
+    transform: translateY(35%)
+    top: 0
+@media (max-width: 420px)
+  .cover__content
+    height: 320px
+    transform: translateY(30%)
+
+.cover__title
+  margin-bottom: 100px
+  font-size: 56px
+  font-weight: 300
+  // transform: rotateY(-100deg)
+  // transition: opacity 0.25s ease, transform 0.5s ease
+  // transform-origin: top left
+  // .state-appear &
+  //   transform: none
+
+@media ($max_laptop)
+  .cover__title
+    font-size: 42px
+    margin-bottom: 75px
+@media ($max_tablets--landscape)
+  .cover__title
+    font-size: 30px
+    margin-bottom: 60px
+@media ($max_tablets--portrait)
+  .cover__title
+    margin-bottom: 50px
+@media (max-width: 420px)
+  .cover__title
+    font-size: 24px
+@media (max-width: 350px)
+  .cover__title
+    & br
+      display: none
+
+.cover__title__word
+  display: inline-block
+  opacity: 0
+  transform: translateY(-15px) scale(0.985)
+  transition: opacity 1s ease, transform 1s ease
+
+  @for $i from 1 through 8
+    &:nth-child(#{$i})
+      transition-delay: #{170 * ($i - 1)}ms
+
+  .appeared-content &
+    opacity: 1
+    transform: none
+
+.cover__title__word__mark
+  color: #fff
+  position: relative
+
+  & .cover__title__word_text
+    position: relative
+
+  &:before
+    content: ""
+    position: absolute
+    top: 0.15em
+    left: 0
+    right: 0
+    bottom: 0
+    opacity: 0
+    transform: scale(0, 0)
+    background-color: #ff1c1c
+    transition: opacity .1s ease,transform .7s cubic-bezier(.2,.62,.45,.91)
+    transition-delay: 1.19s
+    transform-origin: left bottom
+
+  .no-transition &:before
+    transition: none !important
+
+  .appeared-content &:before
+    transform: none
+    opacity: 1
+
+.cover__buttons
+  margin-bottom: 180px
+  display: flex
+@media ($max_laptop)
+  .cover__buttons
+    margin-bottom: 135px
+@media ($max_tablets--landscape)
+  .cover__buttons
+    margin-bottom: 110px
+@media ($max_tablets--portrait)
+  .cover__buttons
+    margin-bottom: 70px
+
+.cover__button
+  display: block
+  max-width: 170px
+
+  &:first-child
+    margin-right: 20px
+    transition: opacity 0.7s 2.2s ease, transform 0.7s 2.2s ease
+  &:last-child
+    display: none
+    transition: opacity 0.7s 2.4s ease, transform 0.7s 2.4s ease
+
+  opacity: 0
+  transform: translateY(-5px) scale(0.985)
+
+  .appeared-content &
+    opacity: 1
+    transform: none
+
+  .state-rotating &
+    transition-delay: 0s !important
+@media ($max_laptop)
+  .cover__button
+    max-width: 127px
+@media ($max_tablets--portrait)
+  .cover__button
+    &:last-child
+      display: block
+@media ($max_phones--tiny)
+  .cover__button
+    &:first-child
+      margin-right: 7px
+
+.cover__scroll
+  //display: block
+  display: inline-block
+  color: #010101
+  font-size: 16px
+  text-decoration: none
+  position: relative
+  // &:hover .cover__scroll__text{
+  //   transform: translateX(5px)
+  // }
+
+  // &:hover:before{
+  //   transform: scaleX(1)
+  // }
+
+  &:before
+    transform-origin: left center
+    content: ""
+
+    background-color: $sky
+
+    display: inline-block
+    vertical-align: middle
+
+    margin-right: 15px
+    //opacity: 0
+    height: 2px
+    width: 90px
+    transform: scaleX(2.7) scaleY(5)
+
+    transition: transform 0.5s 0s ease, background-color 0.8s 0s ease, opacity 0.5s ease
+    transition-delay: 2.8s
+
+  &.appeared-content:before
+      background-color: $mars
+      // opacity: 1
+      transform: scaleX(0.8)
+
+  .state-rotating &:before
+    transition-delay: 0s !important
+
+  .state-rotating &:hover:before
+    transform: scaleX(1)
+
+  &:hover
+    color: $mars
+@media ($max_tablets--landscape)
+  .cover__scroll
+    font-size: 12px
+@media ($max_tablets--portrait)
+  .cover__scroll
+    display: none
+.cover__scroll__text
+  display: inline-block
+  transition: transform 0.25s 0.2s ease, opacity 0.25s 0.2s ease, color 0.3s ease
+  transition-delay: 3.1s, 3.1s, 0s
+  opacity: 0
+  transform: translateX(10px)
+
+  &.appeared-content
+    opacity: 1
+    transform: none
+
+  .state-rotating &
+    transition-delay: 0.2s !important
+
+
+.cover__right
+  position: absolute
+  overflow: hidden
+  z-index: 100
+  right: 0
+  top: 0
+  bottom: 0
+  width: 40%
+  background-color: #bac6ff
+@media ($max_tablets--portrait) and (min-height: 795px)
+  .cover__right
+    position: relative
+    width: 100%
+    height: calc(100vh - 400px)
+    z-index: 0
+@media ($max_tablets--portrait) and (max-height: 794px)
+  .cover__right
+    position: relative
+    width: 100%
+    height: 610px
+    z-index: 0
+@media (max-width: 420px)
+  .cover__right
+    height: 385px
+
+.cover__circle
+  position: absolute
+  z-index: 5
+  top: 0
+  left: 0
+  width: 200%
+  height: 200%
+  border-radius: 50%
+  background-color: $sky
+
+
+$cover_shape_appearing_dur: 3
+.cover__shape
+  position: absolute
+  z-index: 5
+  top: 0
+  left: 0
+  background-position: right top
+  background-size: cover
+  background-repeat: no-repeat
+  background-image: url(/img/shape.svg)
+  bottom: 0
+  height: 100%
+  right: 0
+  transform: scaleY(0.3)
+  opacity: 0
+  transform-origin: bottom center
+  transition: opacity 0.9s ease, transform #{1.3}s 0.2s/*1.7s*/ cubic-bezier(0.59, 0.13, 0, 0.91)
+  .state-appear &
+    transform: scaleY(1)
+    opacity: 1
+.cover__cards_box
+  position: absolute
+  z-index: 10
+  right: -10%
+  top: 20%
+@media (max-width: 890px)
+  .cover__cards_box
+    right: -20%
+@media (max-width: 810px)
+  .cover__cards_box
+    right: -25%
+@media ($max_tablets--portrait)
+  .cover__cards_box
+    top: 5%
+    right: 50%
+    transform: translateX(50%)
+@media (max-width: 420px)
+  .cover__cards_box
+    top: 4%
+
+.cover__big_card, .cover__small_card
+  position: relative
+  border-radius: 4px
+  background-color: white
+  box-shadow: 0 30px 87px rgba(0, 0, 0, 0.55)
+
+.cover__big_card_box
+  margin-bottom: 55px
+@media (max-width: 420px) 
+  .cover__big_card_box
+    margin-bottom: 30px
+
+.cover__big_card
+  width: 485px
+  height: 303px
+  transform: scale(0.95) translateY(80px)
+  opacity: 0
+  transform-origin: bottom center
+  transition: opacity 0.5s #{$cover_shape_appearing_dur/2}s ease, transform 0.6s #{$cover_shape_appearing_dur/2}s ease-out
+  .state-appear &
+    transform: scale(1) translateY(0px)
+    opacity: 1
+@media (max-width: 1180px)
+  .cover__big_card
+    width: 364px
+    height: 227px
+@media (max-width: 420px)
+  .cover__big_card
+    width: 243px
+    height: 151px
+
+
+.cover__small_card_box
+  position: relative
+  display: inline-block
+  vertical-align: top
+  width: 228px
+  &--right
+    float: right
+@media (max-width: 1180px)
+  .cover__small_card_box
+    width: 171px
+@media (max-width: 420px)
+  .cover__small_card_box
+    width: 114px
+
+.cover__small_card
+  position: absolute
+  top: 0
+  width: 100%
+  height: 75px
+  transform-origin: bottom center
+  opacity: 0
+
+  $opacities: 1, 0.5, 0.25, 0.15, 0.05, 0, 0
+
+  @for $i from 1 through 7
+    &--#{$i}
+      transform: translateY(#{200 + (105 * ($i - 1))}px) scale(0.95)
+    .state-appear &--#{$i}
+      transform: translateY(#{0 + (105 * ($i - 1))}px) scale(1)
+      opacity: nth($opacities, $i)
+      transition: opacity 0.5s #{$cover_shape_appearing_dur/2 + 0.1 * $i}s ease, transform 0.9s #{$cover_shape_appearing_dur/2 + 0.1 * $i}s cubic-bezier(0.68, 0.06, 0.27, 0.99)
+    .state-rotating &
+      transition: opacity 0.5s 0s ease, transform 0.9s 0s cubic-bezier(0.68, 0.06, 0.27, 0.99)
+      &--7
+        transition: opacity 0.5s 0s ease, transform 0.5s 0s ease
+        transform: scale(0.8)
+@media (max-width: 420px)
+  .cover__small_card
+    height: 50px
+    @for $i from 1 through 6
+      &--#{$i}
+        transform: translateY(#{200 + (65 * ($i - 1))}px) scale(0.95)
+      .state-appear &--#{$i}
+        transform: translateY(#{0 + (65 * ($i - 1))}px) scale(1)
+
+.cover__small_card__circle
+  position: absolute
+  left: 15px
+  bottom: 0
+  top: 0
+  margin: auto
+  width: 44px
+  height: 44px
+  border-radius: 50%
+  background-color: #d7ecff
+@media (max-width: 420px)
+  .cover__small_card__circle
+    left: 10px
+    width: 29px
+    height: 29px
+
+.cover__small_card__top_bar,
+.cover__small_card__bot_bar
+  position: absolute
+  height: 8px
+  background-color: #e8eded
+  left: 70px
+  border-radius: 4px
+
+.cover__small_card__top_bar
+  top: 21px
+  width: 63px
+.cover__small_card__bot_bar
+  top: 42px
+  width: 128px
+@media (max-width: 1180px)
+  .cover__small_card__top_bar
+    width: 40px
+  .cover__small_card__bot_bar
+    width: 85px
+@media (max-width: 420px)
+  .cover__small_card__top_bar,
+  .cover__small_card__bot_bar
+    height: 6px
+    left: 47px
+    border-radius: 3px
+  .cover__small_card__top_bar
+    top: 14px
+    width: 28px
+  .cover__small_card__bot_bar
+    top: 28px
+    width: 57px
+
+.cover__big_card__logo_box
+  position: absolute
+  left: 0
+  right: 0
+  top: 40px
+  width: 171px
+  height: 142px
+  margin: auto
+@media (max-width: 1180px)
+  .cover__big_card__logo_box
+    top: 30px
+    width: 128px
+    height: 106px
+@media (max-width: 420px)
+  .cover__big_card__logo_box
+    top: 20px
+    width: 85px
+    height: 70px
+
+
+.cover__big_card__logo_circle
+  position: absolute
+  left: 0
+  bottom: 0
+@media (max-width: 1180px)
+  .cover__big_card__logo_circle
+    width: 76px
+@media (max-width: 420px)
+  .cover__big_card__logo_circle
+    width: 50px
+
+.cover__big_card__logo_triangle
+  position: absolute
+  right: 0
+  top: 0
+@media (max-width: 1180px)
+  .cover__big_card__logo_triangle
+    width: 93px
+@media (max-width: 420px)
+  .cover__big_card__logo_triangle
+    width: 62px
+
+.cover__big_card__form_box
+  position: absolute
+  left: 0
+  right: 0
+  top: 220px
+  margin: auto
+  width: 227px
+@media (max-width: 1180px)
+  .cover__big_card__form_box
+    top: 160px
+    width: 170px
+@media (max-width: 420px)
+  .cover__big_card__form_box
+    top: 106px
+    width: 113px
+
+.cover__big_card__input
+  float: left
+  width: 188px
+  height: 31px
+  border: 2px solid #e8e8e8
+  background-color: #ffffff
+  border-radius: 3px
+  position: relative
+@media (max-width: 1180px)
+  .cover__big_card__input
+    width: 135px
+@media (max-width: 420px)
+  .cover__big_card__input
+    width: 90px
+    height: 18px
+
+.cover__big_card__input_placeholder
+  position: absolute
+  left: 12px
+  right: 12px
+  bottom: 0
+  top: 0
+  margin: auto
+  // width: 100%
+  height: 6px
+  background-color: #e8e8e8
+  transform-origin: left center
+  transform: scaleX(0.55)
+  transition: transform 0.25s ease
+@media (max-width: 420px)
+  .cover__big_card__input_placeholder
+    top: 1px
+    left: 8px
+    width: 50px
+    height: 3px
+
+.cover__big_card__button
+  float: right
+  border-radius: 3px
+  height: 31px
+  width: 31px
+  background-color: #4d6aff
+  cursor: pointer
+  &:hover
+    background-color: #4159d6
+@media (max-width: 420px)
+  .cover__big_card__button
+    border-radius: 2px
+    height: 18px
+    width: 18px

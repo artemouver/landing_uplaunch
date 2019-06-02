@@ -1,0 +1,47 @@
+<svg width="2536px" height="857px" viewBox="0 0 2536 857" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 47.1 (45422) - http://www.bohemiancoding.com/sketch -->
+    <title>line_chart</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="-1.11022302e-14%" x2="50%" y2="63.4152041%" id="linearGradient-1">
+            <stop stop-color="#BDBBDD" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#1941E3" stop-opacity="0.197548687" offset="100%"></stop>
+        </linearGradient>
+        <path d="M249.543079,618.575958 C460.721294,525.079492 618.004052,549.734222 846.131972,374.07632 C1048.12815,218.539788 1204.28392,173.696902 1451.89863,253.994197 C1537.92323,281.890532 1637.91354,325.487376 1760.67735,386.012299 C2236.80664,620.753213 2531.7275,332.786171 2531.7275,332.786171 L2533.79818,0.0381194409 L0.678526048,0.0381194409 L0.678526048,966.969504 C0.678526048,966.969504 38.3648645,712.072423 249.543079,618.575958 Z" id="path-2"></path>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="line_chart" transform="translate(-1.000000, 0.000000)">
+            <g id="Lines" transform="translate(0.959339, 0.726811)">
+                <g id="Group-3">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="shadow1" fill="url(#linearGradient-1)" transform="translate(1267.238355, 483.503812) rotate(-180.000000) translate(-1267.238355, -483.503812) " xlink:href="#path-2"></use>
+                    <g id="Group-2"  stroke-linecap="square" stroke="#949FE6" stroke-opacity="0.371631567">
+                        <g transform="translate(489.000000, 367.000000)">
+                            <path d="M1745.13151,1.92953671 L1745.13151,725.428821" id="15"></path>
+                            <path d="M1396.40216,109.756914 L1396.40216,715.91802" id="14"></path>
+                            <path d="M1047.67281,325.666904 L1047.67281,598.44788" id="13"></path>
+                            <path d="M698.943456,375.465693 L698.943456,597.618147" id="12"></path>
+                            <path d="M350.214104,247.597421 L350.214104,598.618147" id="11"></path>
+                            <path d="M1.48475222,129.184879 L1.48475222,598.777248" id="10"></path>
+                        </g>
+                    </g>
+                    <g id="Group-4" opacity="0.427413713"  stroke-linecap="square" stroke="#919193" stroke-opacity="0.339872056">
+                        <g transform="translate(139.364676, 260.000000)">
+                            <path d="M2269.13151,1.48981886 L2269.13151,845.109888" id="8"></path>
+                            <path d="M1920.40216,162.862378 L1920.40216,769.023484" id="7"></path>
+                            <path d="M1571.67281,315.428011 L1571.67281,705.596546" id="6"></path>
+                            <path d="M1222.94346,489.782595 L1222.94346,705.44788" id="5"></path>
+                            <path d="M874.214104,430.741423 L874.214104,705.618147" id="4"></path>
+                            <path d="M525.484752,276.386437 L525.484752,705.277613" id="3"></path>
+                            <path d="M176.7554,237.306403 L176.7554,705.81939" id="2"></path>
+                            <path d="M2.39072427,288.233843 L2.39072427,706.89782" id="1"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+            <path data-20p-top="stroke-dashoffset:0;" data-10p-bottom="stroke-dashoffset:2889;" d="M5.5,633.5 C71,572 368,379 774,582 C850.586853,620.293427 961,677 1081,714 C1186.25057,746.452259 1402,832 1690,594 C1776.27824,522.70062 1881.02181,479.046735 1981,448 C2080.97819,416.953265 2187.12861,396.159236 2287,349 C2398.53191,296.334667 2490,205 2534.5,12.5" id="chart_line" stroke="#0065FF" stroke-width="4" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>

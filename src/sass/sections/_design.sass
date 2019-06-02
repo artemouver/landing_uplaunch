@@ -1,0 +1,287 @@
+.design
+  overflow: hidden
+  padding-top: 121px
+  background-color: #e7f4ff
+  text-align: center
+@media ($max_laptop)
+  .design
+    padding-top: 90px
+@media ($max_tablets--landscape)
+  .design
+    padding-top: 72px
+
+.design__title
+  margin-bottom: 86px
+@media ($max_laptop)
+  .design__title
+    margin-bottom: 64px
+@media ($max_tablets--landscape)
+  .design__title
+    margin-bottom: 51px
+
+.design__title__word
+  display: inline-block
+  opacity: 0
+  transform: translateY(-15px) scale(0.985)
+  transition: opacity 1s ease, transform 1s ease
+
+  @for $i from 1 through 2
+    &:nth-child(#{$i})
+      transition-delay: #{170 * ($i - 1)}ms
+
+  .appeared-content &
+    opacity: 1
+    transform: none
+
+.design__info
+  margin: auto auto 105px
+
+  max-width: 732px
+  font-size: 18px
+  line-height: 26px
+
+  opacity: 0
+  transform: translateY(-5%) scale(0.985)
+  color: $sky
+
+  transition: opacity 1s ease, transform 1s ease-out, color 1.2s ease
+
+  &.appeared-content 
+    color: #000
+    transform: none
+    opacity: 1
+@media ($max_laptop)
+  .design__info
+    margin: auto auto 79px
+    font-size: 13px
+    line-height: 19px
+    max-width: 549px
+@media ($max_laptop)
+  .design__info
+    margin: auto auto 63px
+    font-size: 11px
+    line-height: 15px
+    max-width: 439px
+@media ($max_phones--tiny)
+  .design__info
+    margin: auto auto 30px
+
+
+@media ($max_tablets--portrait)
+  .design__features
+    display: flex
+    width: 300px
+    margin: 0 auto
+@media ($max_phones--tiny)
+  .design__features
+    max-width: 300px
+    width: auto
+    flex-direction: column
+    margin-bottom: 60px
+
+$designFeature_delay: 120
+.design__feature_row
+  //display: inline-block
+  list-style: none
+  margin: auto auto 40px
+  padding: 0
+  max-width: 850px
+  @include clearfix
+  text-align: left
+  &:first-child
+    & .design__feature_item
+      opacity: 0
+      transform: translateY(-50%)
+      &:first-child 
+        transform: translateX(-20%)
+      &:last-child
+        transform: translateX(20%)
+      @for $i from 1 through 4
+        &:nth-child(#{$i})
+          transition-delay: #{$designFeature_delay * ($i - 1)}ms
+
+      .appeared-content &
+        opacity: 1
+        transform: none
+
+  &:last-child
+    & .design__feature_item
+      opacity: 0
+      transform: translateY(50%)
+      &:first-child
+        transform: translateX(-20%)
+      &:last-child
+        transform: translateX(20%)
+
+      @for $i from 1 through 4
+        &:nth-child(#{$i})
+          transition-delay: #{$designFeature_delay * (8 - $i)}ms
+
+      .appeared-content &
+        opacity: 1
+        transform: none
+@media ($max_laptop)
+  .design__feature_row
+    margin: auto auto 30px
+    max-width: 637px
+@media ($max_tablets--landscape)
+  .design__feature_row
+    margin: auto auto 24px
+    max-width: 509px
+@media ($max_tablets--portrait)
+  .design__feature_row
+    &:first-child
+      & .design__feature_item
+        opacity: 0
+        transform: translateX(-20%)
+        &:first-child
+          transform: translate(-20%, -50%)
+        &:last-child
+          transform: translate(-20%, 50%)
+        @for $i from 1 through 4
+          &:nth-child(#{$i})
+            transition-delay: #{$designFeature_delay * ($i - 1)}ms
+        .appeared-content &
+          opacity: 1
+          transform: none
+
+    &:last-child
+      & .design__feature_item
+        opacity: 0
+        transform: translateX(20%)
+        &:first-child 
+          transform: translate(20%, -50%)
+        &:last-child 
+          transform: translate(20%, 50%)
+        @for $i from 1 through 4
+          &:nth-child(#{$i})
+            transition-delay: #{$designFeature_delay * (8 - $i)}ms
+        .appeared-content &
+          opacity: 1
+          transform: none
+@media ($max_phones--tiny)
+  .design__feature_row
+    margin: auto auto auto
+    &:first-child
+      & .design__feature_item
+        opacity: 0
+        transform: translateY(-50%)
+        &:first-child 
+          transform: translateY(-50%)
+        &:last-child
+          transform: translateY(-50%)
+        .appeared-content &
+          opacity: 1
+          transform: none
+    &:last-child
+      & .design__feature_item
+        opacity: 0
+        transform: translateY(-50%)
+        &:first-child
+          transform: translateY(-50%)
+        &:last-child
+          transform: translateY(-50%)
+        @for $i from 1 through 4
+          &:nth-child(#{$i})
+            transition-delay: #{$designFeature_delay * ($i + 3)}ms
+        .appeared-content &
+          opacity: 1
+          transform: none
+.design__feature_item
+  width: 25%
+  float: left
+  //margin-right: 60px
+  &:last-child
+    margin-bottom: 0
+    margin-right: 0
+  font-size: 16px
+  font-weight: 700
+  color: #000000
+  transition: opacity 1s ease, transform 1s ease
+@media ($max_laptop)
+  .design__feature_item
+    font-size: 12px
+@media ($max_tablets--landscape)
+  .design__feature_item
+    font-size: 10px
+@media ($max_tablets--portrait)
+  .design__feature_item
+    width: auto
+    float: none
+    margin: 10px auto
+@media ($max_phones--tiny)
+  .design__feature_item
+    text-align: center
+
+.design__cards_box
+  position: relative
+  max-width: 1230px
+  height: 420px
+  padding: 0 15px
+  margin: 210px auto auto
+@media ($max_laptop)
+  .design__cards_box
+    max-width: 950px
+    height: 320px
+    padding: 0 11px
+    margin: 157px auto auto
+@media ($max_tablets--landscape)
+  .design__cards_box
+    max-width: 760px
+    height: 256px
+    padding: 0 9px
+    margin: 125px auto auto
+@media ($max_tablets--portrait)
+  .design__cards_box
+    max-width: 615px
+    height: 210px
+    padding: 0 7px
+    margin: 105px auto auto
+@media (max-width: 680px)
+  .design__cards_box
+    margin: 15vw 40px auto
+    height: 31vw
+@media ($max_phones--small)
+  .design__cards_box
+    margin: 15vw 15px auto
+.design__card
+  position: absolute
+  top: 0
+  left: 0
+  right: 0
+  opacity: 0
+  transform: none
+  transition: opacity 1s ease, transform 1s ease, top 1s ease
+  .appeared-content &.state-top
+    opacity: 1
+    z-index: 100
+    transform: none
+  .appeared-content &.state-mid
+    opacity: 0.7
+    z-index: 50
+    transform: translateY(-13%) scale(0.9)
+  .appeared-content &.state-back
+    opacity: 0.2
+    z-index: 10
+    transform: translateY(-26%) scale(0.8)
+  &.to-show
+    opacity: 0
+    z-index: 5
+    transform: translateY(-39%) scale(0.7)
+
+  &.to-hidden
+    opacity: 0
+    z-index: 100
+    transform: translateY(50%)
+.design__card_img
+  width: 100%
+  box-shadow: 0 4px 75px rgba(56, 57, 67, 0.46)
+  border-radius: 30px
+@media ($max_laptop)
+  .design__card_img
+    box-shadow: 0 3px 56px rgba(56, 57, 67, 0.46)
+    border-radius: 22px
+@media ($max_tablets--landscape)
+  .design__card_img
+    box-shadow: 0 3px 45px rgba(56, 57, 67, 0.46)
+    border-radius: 18px
